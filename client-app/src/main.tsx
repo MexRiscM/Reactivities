@@ -7,6 +7,8 @@ import "./app/layout/styles.css";
 import { router } from "./app/router/Routes";
 import { store, StoreContext } from "./app/stores/store";
 import "react-calendar/dist/Calendar.css";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
