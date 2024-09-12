@@ -6,6 +6,7 @@ using Application.Activities;
 using Application.Core;
 using Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -43,6 +44,7 @@ public class ActivitiesController : BaseApiController
         activity.Id = id;
         return HandleResult(await Mediator.Send(new Edit.Command { Activity = activity }));
     }
+
 
     [HttpDelete("{id}")] //api/activities/id
     public async Task<IActionResult> DeleteActivity(Guid id)
